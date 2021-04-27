@@ -1,0 +1,101 @@
+.booklist {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; //important
+  max-height: 100vh;
+  position: relative;
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    font-family: $fontSecondary;
+    background-color: #999;
+    min-height: 6em;
+  }
+
+  &__content {
+    background-color: #eee;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 100%; //important
+    overflow-y: auto;
+    font-family: $fontMain;
+  }
+
+  &__footer {
+    display: flex;
+    flex-direction: column;
+    background-color: #999;
+    min-height: 5em;
+    font-family: $fontSecondary;
+    padding: 1em;
+
+    &-info {
+      display: flex;
+      justify-content: flex-start;
+      margin-bottom: 0.5em;
+      flex-wrap: wrap;
+
+      & > p {
+        font-weight: bold;
+      }
+      & > p > span {
+        color: #0e49b5;
+      }
+
+      & > p + p {
+        margin-left: 0.6em;
+      }
+    }
+
+    &-controls {
+      display: flex;
+      justify-content: flex-start;
+
+      & > button {
+        padding: 0.3em;
+        border-radius: 3px;
+        font-size: 0.75em;
+      }
+    }
+  }
+
+  &__card {
+    height: 7em;
+    margin-bottom: 0.3em;
+    background-color: #bdc7c9;
+    padding: 1em;
+
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.16), 0 1px 3px rgba(0, 0, 0, 0.23);
+
+    & > h3 {
+      font-size: 1.5em;
+    }
+
+    & > h4 {
+      font-size: 1.2em;
+    }
+
+    &:nth-child(2n-1) {
+      background-color: #bbb;
+    }
+
+    &:hover {
+      cursor: pointer;
+      box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    }
+  }
+
+  @media (max-width: 1370px) {
+    font-size: 0.8em;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 0.6em;
+  }
+}

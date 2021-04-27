@@ -1,0 +1,50 @@
+.readinglist {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: no-wrap;
+  width: 30%;
+  background-color: #f3f4ed;
+  // overflow-y: auto;
+  font-family: $fontMain;
+
+  &__to-read-book-card {
+    padding: 1em;
+    margin-bottom: 0.5em;
+    background-color: #f1d18a;
+
+    &:hover {
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    }
+  }
+
+  &__finished-book-card {
+    padding: 1em;
+    margin-bottom: 0.5em;
+    background-color: #51c4d3;
+  }
+
+  &__title {
+    margin: 0;
+    align-self: flex-start;
+  }
+
+  &__info {
+    margin: 0;
+    align-self: flex-start;
+  }
+
+  &__content {
+    overflow-y: auto;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 0.8em;
+  }
+}
+
+button {
+  padding: 0.2em 0.3em;
+  border-radius: 3px;
+  font-size: 0.75em;
+  margin-top: 0.3em;
+}

@@ -1,0 +1,42 @@
+$fontMain: "Martel", serif;
+$fontSecondary: Arial, Helvetica, sans-serif;
+$colorMain: #222831;
+$colorSecondary: #393e46;
+
+.App {
+  height: 100vh;
+  color: $colorMain;
+}
+
+.booklist-app {
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.checked {
+  border: 3px solid #51c4d3;
+}
+
+.muted {
+  color: $colorSecondary;
+}
+
+button,
+a {
+  cursor: pointer;
+}
+
+button + button {
+  margin-left: 1em;
+}
+
+button {
+  border: none;
+  font-family: $fontSecondary;
+}
+
+button:hover {
+  background: linear-gradient(217deg, rgba(34, 163, 224, 1) 21%, rgba(65, 190, 184, 1) 100%);
+  color: #e9fadd;
+}
