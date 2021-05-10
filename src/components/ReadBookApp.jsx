@@ -69,7 +69,7 @@ class ReadBookApp extends Component {
     };
   }
 
-  WAIT_TIMEOUT_ms = 3000;
+  WAIT_TIMEOUT_ms = 2000;
   debouncedSearch = this.debounce(() => this.handleSearch(), this.WAIT_TIMEOUT_ms);
 
   //handlers
@@ -92,6 +92,7 @@ class ReadBookApp extends Component {
     this.setState({ isLoading: false });
     //console.log("isLoading: false ");
     newList = [...docs];
+    //addin id for each book
     newList.forEach((item) => (item._id = item.key.split("/").pop()));
     const size = docs.length;
     const newListInfo = { booksFound: numFound, start: start, pageSize: size };
@@ -154,7 +155,7 @@ class ReadBookApp extends Component {
     if (previouslySelectedBook && previouslySelectedBook._id === book._id) {
       return;
     }
-
+    // else -> reselect previouslySelectedBook
     if (previouslySelectedBook) {
       const prevSelectedBookIndex = booksList.indexOf(previouslySelectedBook);
       booksList[prevSelectedBookIndex].isSelected = false;
@@ -167,6 +168,7 @@ class ReadBookApp extends Component {
 
   handleAddBookClick = (book) => {
     const { toReadList } = this.state;
+    //check if book has been already added
     const isListed = toReadList.some((item) => item._id === book._id);
     if (isListed) {
       return;
@@ -233,7 +235,7 @@ class ReadBookApp extends Component {
           onScroll={handleScroll}
           onBookCardClick={handleBookCardClick}
         />
-        <Details bookDetails={selectedBook} onAddBookClick={handleAddBookClick} />
+        <Details bookDetails={selectedBook} toReadList={toReadList} onAddBookClick={handleAddBookClick} />
         <ReadingList
           toReadList={toReadList}
           finishedBooksList={finishedBooksList}

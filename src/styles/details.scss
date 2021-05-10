@@ -18,6 +18,13 @@
   &__subtitle {
   }
 
+  &__message {
+    font-size: 0.75em;
+    font-weight: bold;
+    color: rgba(34, 163, 224, 1);
+    margin-left: 1em;
+  }
+
   & p {
     font-weight: bold;
     margin-bottom: 0.3em;

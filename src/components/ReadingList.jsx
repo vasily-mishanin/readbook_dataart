@@ -10,14 +10,20 @@ const ToReadList = ({ toReadList, finishedBooksList, onMarkAsRead, onRemove }) =
     <section className="readinglist">
       <BookListHeader>
         {" "}
-        <h1 className="readinglist__title">To read list...</h1>
+        <h1 className="readinglist__title">To Read List...</h1>
         <p className="readinglist__info">
           <span>{totalBooks}</span> books, {readBooks} read
         </p>
       </BookListHeader>
       <div className="readinglist__content">
         {toReadList.map((book) => (
-          <ToReadBookCard key={book._id} book={book} onMarkAsRead={onMarkAsRead} onRemove={onRemove} />
+          <ToReadBookCard
+            key={book._id}
+            book={book}
+            finishedBooksList={finishedBooksList}
+            onMarkAsRead={onMarkAsRead}
+            onRemove={onRemove}
+          />
         ))}
 
         {finishedBooksList.map((book) => (

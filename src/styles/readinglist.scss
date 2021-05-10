@@ -9,8 +9,15 @@
 
   &__to-read-book-card {
     padding: 1em;
+    padding-bottom: 0.5em;
     margin-bottom: 0.5em;
     background-color: #f1d18a;
+
+    &--message {
+      font-size: 0.75em;
+      font-weight: bold;
+      color: rgba(34, 163, 224, 1);
+    }
 
     &:hover {
       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
@@ -47,4 +54,5 @@ button {
   border-radius: 3px;
   font-size: 0.75em;
   margin-top: 0.3em;
+  margin-bottom: 0.5em;
 }

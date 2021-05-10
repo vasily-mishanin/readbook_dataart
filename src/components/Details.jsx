@@ -1,6 +1,6 @@
 import React from "react";
 
-const Details = ({ bookDetails, onAddBookClick }) => {
+const Details = ({ bookDetails, toReadList, onAddBookClick }) => {
   let { title, subtitle, language, has_fulltext, first_publish_year, publish_year } = bookDetails;
   //local helpers
   const processLangArr = (langArr) => (langArr ? `(${langArr.join(", ")})` : ``);
@@ -11,8 +11,9 @@ const Details = ({ bookDetails, onAddBookClick }) => {
   publish_year = processYearArr(publish_year);
   first_publish_year = processYearArr(first_publish_year);
   language = processLangArr(language);
-  //in case we have {} book
+  //in case we have {} book (no selected book)
   const isBookExist = Object.keys(bookDetails).length > 0;
+  const isListed = toReadList.some((item) => item._id === bookDetails._id);
   return (
     <article className="details">
       <h2 className="details__heading">Book details</h2>
@@ -34,6 +35,7 @@ const Details = ({ bookDetails, onAddBookClick }) => {
             Years published: <span>{publish_year || `no information`}</span>{" "}
           </p>
           <button onClick={() => onAddBookClick(bookDetails)}>Add book to Read List</button>
+          {isListed && <span className="details__message">Added</span>}
         </div>
       )}
     </article>
