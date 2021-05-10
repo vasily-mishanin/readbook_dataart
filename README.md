@@ -1,4 +1,4 @@
-# Чтобы запeстить нужно:
+#
 
             npm install
             npm start
